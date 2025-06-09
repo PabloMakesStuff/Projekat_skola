@@ -3,13 +3,22 @@
 [ext_resource type="Script" uid="uid://cy4dg7nm7xini" path="res://character_body_2d.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://c4nflc00n43sj" path="res://icon.svg" id="2_h2yge"]
 
+[sub_resource type="TileSet" id="TileSet_0xm2m"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(50, 49)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
-size = Vector2(367, 20)
-
 [node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(1.32551, 1.09541)
+tile_set = SubResource("TileSet_0xm2m")
+rendering_quadrant_size = 32
+format = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap"]
+scale = Vector2(1.17579, 1.07529)
+texture = ExtResource("2_h2yge")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_0xm2m")
@@ -24,15 +33,3 @@ texture = ExtResource("2_h2yge")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(26, 25.5)
 shape = SubResource("RectangleShape2D_1bvp3")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(30, 73)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(83.5, 1)
-scale = Vector2(2.86719, 0.175781)
-texture = ExtResource("2_h2yge")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(84.5, 0)
-shape = SubResource("RectangleShape2D_lquwl")
