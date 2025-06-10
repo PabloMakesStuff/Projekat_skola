@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://2etuptiaseq3"]
+
+[ext_resource type="Script" uid="uid://bbwyliif62dvk" path="res://classes/attacks/attack.gd" id="1_uin17"]
+
+[resource]
+script = ExtResource("1_uin17")
+name = "Flame"
+power = 10
+type = "Fire"
+description = "Burns the target."
+metadata/_custom_type_script = "uid://bbwyliif62dvk"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://cn3rq7t1atkkx"]
+
+[ext_resource type="Script" uid="uid://bbwyliif62dvk" path="res://classes/attacks/attack.gd" id="1_liqcf"]
+
+[resource]
+script = ExtResource("1_liqcf")
+name = "Scratch"
+power = 10
+type = "normal"
+description = ""
+metadata/_custom_type_script = "uid://bbwyliif62dvk"

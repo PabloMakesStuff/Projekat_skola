@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Players" load_steps=4 format=3 uid="uid://d3ivd25105rgs"]
+
+[ext_resource type="Script" uid="uid://bbwyliif62dvk" path="res://classes/attacks/attack.gd" id="1_13s83"]
+[ext_resource type="Resource" uid="uid://2etuptiaseq3" path="res://classes/attacks/Flame.tres" id="2_mbpav"]
+[ext_resource type="Script" uid="uid://cjcsbvbbbkrn8" path="res://classes/characters/players/player.gd" id="2_sea4s"]
+
+[resource]
+script = ExtResource("2_sea4s")
+name = "NPC"
+max_hp = 100
+current_hp = 100
+status = ""
+defense = 5
+dexterity = 5
+attacks = Array[ExtResource("1_13s83")]([ExtResource("2_mbpav")])
+metadata/_custom_type_script = "uid://cjcsbvbbbkrn8"

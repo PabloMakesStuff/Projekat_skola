@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Enemies" load_steps=4 format=3 uid="uid://i8adrfm6njty"]
+
+[ext_resource type="Script" uid="uid://bbwyliif62dvk" path="res://classes/attacks/attack.gd" id="1_2al7w"]
+[ext_resource type="Script" uid="uid://djwuul3cdjhke" path="res://classes/characters/enemies/enemies.gd" id="2_bar4j"]
+[ext_resource type="Resource" uid="uid://cn3rq7t1atkkx" path="res://classes/attacks/Scratch.tres" id="2_xxxdu"]
+
+[resource]
+script = ExtResource("2_bar4j")
+name = "NPC"
+max_hp = 100
+current_hp = 100
+status = ""
+defense = 5
+dexterity = 5
+attacks = Array[ExtResource("1_2al7w")]([ExtResource("2_xxxdu")])
+metadata/_custom_type_script = "uid://djwuul3cdjhke"
