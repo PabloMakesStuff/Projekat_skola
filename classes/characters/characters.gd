@@ -3,6 +3,7 @@ class_name Characters
 
 @export var name: String = "NPC"
 @export var max_hp: int = 100
+@export var level: int = 1
 @export var current_hp: int = 100
 @export var status: String = ""
 @export var defense: int = 5

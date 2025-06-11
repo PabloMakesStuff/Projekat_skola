@@ -1,0 +1,197 @@
+[gd_scene load_steps=12 format=3 uid="uid://6galadmisb2k"]
+
+[ext_resource type="Texture2D" uid="uid://coyxovoqy458i" path="res://assets/battleback1.png" id="1_38vvt"]
+[ext_resource type="Script" uid="uid://klgqtkgkj24e" path="res://src/battle.gd" id="1_fluly"]
+[ext_resource type="Texture2D" uid="uid://cso2fru10mxn3" path="res://assets/08.png" id="2_fluly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb4ph"]
+bg_color = Color(0.471879, 0, 0.0746474, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr1fq"]
+bg_color = Color(0.360307, 0.699393, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4qsw"]
+bg_color = Color(0, 0, 0, 0.745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4yhw"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muv5k"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk78t"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5o88q"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkv6f"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fluly")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 652.0
+texture = ExtResource("1_38vvt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 159.0
+grow_horizontal = 2
+
+[node name="EnemyHP" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_sb4ph")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rr1fq")
+value = 100.0
+
+[node name="Enemy" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_fluly")
+stretch_mode = 3
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h4qsw")
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -82.0
+grow_horizontal = 2
+
+[node name="Player" type="Label" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+text = "Player"
+
+[node name="PlayerHp" type="Label" parent="PlayerPanel/PlayerData/Player"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 1.0
+offset_right = 203.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "HP:100/100"
+
+[node name="PlayerStatus" type="Label" parent="PlayerPanel/PlayerData/Player/PlayerHp"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 154.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Status: Normal"
+
+[node name="Actions" type="HBoxContainer" parent="PlayerPanel"]
+layout_mode = 1
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 1154.0
+offset_bottom = 141.0
+
+[node name="Attack" type="Button" parent="PlayerPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_d4yhw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d4yhw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_muv5k")
+text = "ATTACK"
+
+[node name="Change" type="Button" parent="PlayerPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jk78t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jk78t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_muv5k")
+text = "CHANGE"
+
+[node name="Run" type="Button" parent="PlayerPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5o88q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5o88q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_muv5k")
+text = "RUN"
+
+[node name="Textbox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -156.0
+offset_right = 1149.0
+offset_bottom = 8.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lkv6f")
+
+[node name="Label" type="Label" parent="Textbox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "A skeleton appears!"
+
+[node name="Ticker" type="Label" parent="Textbox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "NEXT"

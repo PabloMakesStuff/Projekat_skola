@@ -6,8 +6,9 @@
 
 [resource]
 script = ExtResource("2_sea4s")
-name = "NPC"
+name = "Mage"
 max_hp = 100
+level = 1
 current_hp = 100
 status = ""
 defense = 5
